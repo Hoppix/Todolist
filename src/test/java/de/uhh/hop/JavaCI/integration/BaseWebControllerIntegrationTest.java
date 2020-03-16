@@ -1,5 +1,6 @@
 package de.uhh.hop.JavaCI.integration;
 
+import de.uhh.hop.JavaCI.JavaCiApplication;
 import de.uhh.hop.JavaCI.model.TodoEntry;
 import de.uhh.hop.JavaCI.integration.tools.RestClient;
 import org.junit.Assert;
@@ -12,10 +13,11 @@ import java.util.List;
 public class BaseWebControllerIntegrationTest
 {
 	RestClient client;
+	int port = JavaCiApplication.PORT;
 
 	@Before
 	public void initTest() {
-		client = new RestClient("localhost:8080");
+		client = new RestClient("localhost:" + port);
 	}
 
 	@Test

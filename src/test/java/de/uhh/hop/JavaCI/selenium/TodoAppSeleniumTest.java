@@ -3,6 +3,7 @@ package de.uhh.hop.JavaCI.selenium;
 import java.io.File;
 import java.util.List;
 
+import de.uhh.hop.JavaCI.JavaCiApplication;
 import org.junit.Test;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ public class TodoAppSeleniumTest {
 	private final String osName = System.getProperty("os.name").toLowerCase();
 	private final int version = 80;
 	private int bitArch = 64;
+	private int port = JavaCiApplication.PORT;
 
 	@Test
 	public void createAndDeleteEntry() throws InterruptedException {
@@ -82,7 +84,7 @@ public class TodoAppSeleniumTest {
 			driver.manage().window().maximize();
 		}
 
-		driver.get("http://localhost:8080/index.html");
+		driver.get("http://localhost:" + port + "/index.html");
 
 		return driver;
 	}
