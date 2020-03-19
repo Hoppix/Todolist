@@ -65,7 +65,7 @@ public class TodoEntryTest
 		Assert.assertFalse(entryB.getDone());
 		Assert.assertFalse(entryC.getDone());
 
-		entryA.setDone(false); //gewollter fehler
+		entryA.setDone(true);
 		entryB.setDone(true);
 		entryC.setDone(true);
 
