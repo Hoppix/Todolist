@@ -88,7 +88,7 @@ public class TodoEntryService
 		List<TodoEntry> found = new ArrayList<>();
 
 		for(TodoEntry entry: todoEntries) {
-			if( done != entry.getDone()) found.add(entry); //soll fehler hervorrufen
+			if( done == entry.getDone()) found.add(entry); //fehler korrigiert
 		}
 
 		return found;
